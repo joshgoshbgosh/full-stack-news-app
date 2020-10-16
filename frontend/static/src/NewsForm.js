@@ -46,27 +46,29 @@ handleSubmit = (event) => {
 
   render() {
     return (
-      <form className="col-12" onSubmit={this.handleSubmit}>
-        <div>
+      <form className="col-6" onSubmit={this.handleSubmit}>
+        <div className="form-group">
           <label>Title</label>
             <input type="text" value={this.state.title} onChange ={this.handleTitleChange} />
               </div>
                 <div>
                   <label>Body</label>
-                    <textarea value={this.state.body} onChange={this.handleBodyChange}></textarea>
+                    <textarea rows="5" value={this.state.body} onChange={this.handleBodyChange}></textarea>
                       </div>
                         <div>
-                        <label>Category</label>
-                      <input type="text" value={this.state.category} onChange ={this.handleCategoryChange} />
+                        <label className="catg">Category</label>
+                      <input rows="5"type="text" value={this.state.category} onChange ={this.handleCategoryChange} />
                     </div>
                   <div>
                 <label>Status</label>
-              <button type="draft">Draft</button>
-            <button type="submission">Submission</button>
-          <button type="published">Published</button>
-        </div>
-      <button type="submit">Submit</button>
-    </form>
+              <div>
+            <button type="draft"className="draft btn btn-outline-dark">Draft</button>
+          <button type="submission"className="btn btn-outline-dark">Submission</button>
+        <button type="published" className="pub btn btn-outline-dark">Published</button>
+      </div>
+    </div>
+  <button type="submit"className="sub btn btn-outline-dark">Submit</button>
+</form>
 
 
     )

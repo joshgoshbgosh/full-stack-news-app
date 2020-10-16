@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+form {
+  margin: 0 auto;
+  text-align: center;
+
+
+/* display:inline-block;
+position: relative;
+left: 500px;
+top:100px; */
+
+
+}
+
+button {
+margin: 20px;
+
+
+}
+label {
+  /* display:inline-block;
+  font-weight: 100;
+  position: relative;
+  left: 65px; */
+}
+
+input, textarea {
+  display:block;
+  margin: 0 auto;
+  width: 600px;
+}
+
+textarea {
+  height: 500px;
+}
+
+.catg {
+  /* position:relative;
+  right: 20px; */
+}
+.draft {
+  padding-left: 35px;
+  padding-right: 35px;
+
+}
+.pub {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.sub {
+  padding-left: 29px;
+  padding-right: 29px;
+  margin-left: 25px;
+
+}
