@@ -57,17 +57,23 @@ handleSubmit = (event) => {
                       </div>
                         <div>
                         <label className="catg">Category</label>
-                      <input rows="5"type="text" value={this.state.category} onChange ={this.handleCategoryChange} />
+                        <select className="form-control" id="category" name="category" onChange={this.handleInput}>
+                      <option>Select Category</option>
+                       <option value="Music">Music</option>
+                     <option value="Travel">Travel</option>
+                   <option value="Coffee">Coffee</option>
+                </select>
                     </div>
                   <div>
                 <label>Status</label>
-              <div>
-            <button type="draft"className="draft btn btn-outline-dark">Draft</button>
-          <button type="submission"className="btn btn-outline-dark">Submission</button>
-        <button type="published" className="pub btn btn-outline-dark">Published</button>
-      </div>
-    </div>
-  <button type="submit"className="sub btn btn-outline-dark">Submit</button>
+                <select className="form-control" id="status" name="status" onChange={this.handleInput}>
+              <option>Select Status</option>
+                <option value="Draft">Draft</option>
+                 <option value="Submitted">Submitted</option>
+                 <option value="Published">Published</option>
+               </select>
+               </div>
+        <button type="submit"className="sub btn btn-outline-dark">Submit</button>
 </form>
 
 
