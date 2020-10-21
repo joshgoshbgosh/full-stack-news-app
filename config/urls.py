@@ -19,4 +19,5 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('news.urls')),
-]
+    path('', include('frontend.urls', namespace= 'frontend')),
+] + static(settings.MEDIA_URL, documents_root=settings.MEDIA_ROOT)
