@@ -1,10 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+
 User = get_user_model()
-
-
-
-
 
 class News(models.Model):
     Draft = "Draft"
@@ -28,9 +25,7 @@ class News(models.Model):
     category = models.CharField(max_length=225, choices=STORY_CHOICES, default=Music)
     status = models.CharField(max_length=225, choices=STATUS_CHOICES, default=Draft)
     image_url = models.URLField(max_length=225, null=True)
-    auther = models.ForeignKey(User, on_delete=model.CASCADE)
-
-
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title

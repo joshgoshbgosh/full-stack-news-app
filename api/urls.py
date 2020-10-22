@@ -6,6 +6,6 @@ from .views import NewsListAPIView, NewsDetailAPIView
 
 
 urlpatterns = [
-    path('', NewsListAPIView.as_view(), name='news_list'),
-    path('<int:pk>/', NewsDetailAPIView.as_view(), name="news_detail"),
+    path('articles/', NewsListAPIView.as_view(), name='news_list'),
+    path('articles/<int:pk>/', NewsDetailAPIView.as_view(), name="news_detail"),
 ]

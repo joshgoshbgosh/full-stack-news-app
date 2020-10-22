@@ -4,25 +4,22 @@ import MusicList from './components/MusicList';
 import CoffeeList from './components/CoffeeList';
 import './App.css';
 import NewsForm from './components/NewsForm';
-import NewsList from './components/StoryList';
+import NewsList from './components/NewsList';
 import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
 
-// componentDidMount() {
-//   fetch('api/v1/')
-//   .then(response => response.json())
-//   .then(data => this.setState({stories: data}))
-//   .catch(error => console.log('Error:', error));
-// }
+
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
       articles: [],
+      title: [],
+      // image_url:
     }
 
 
@@ -57,7 +54,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <NewsList/>
+        <NewsList articles={this.state.articles}/>
 
       </div>
     )

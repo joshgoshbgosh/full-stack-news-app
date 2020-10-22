@@ -6,8 +6,8 @@ from .models import News
 
 
 class NewsSerializer(serializers.ModelSerializer):
-    user = serializers.ReadOnlyField(source='user.username')
+    author = serializers.ReadOnlyField(source='author.username')
 
     class Meta:
         model = News
-        fields = ('id', 'title', 'body', 'category', 'status', 'image_url',)
+        fields = ('id', 'title', 'body', 'category', 'status', 'image_url', 'author',)
