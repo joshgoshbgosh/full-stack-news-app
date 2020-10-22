@@ -11,6 +11,7 @@ djangorestframework = "*"
 django-rest-auth = "*"
 django-allauth = "*"
 pillow = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"

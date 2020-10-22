@@ -1,10 +1,20 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
 
 
 
 
 class News(models.Model):
-
+    Draft = "Draft"
+    Submit = "Submit"
+    Publish = "Publish"
+    STATUS_CHOICES = [
+    (Draft, "Draft"),
+    (Submit, "Submit"),
+    (Publish, "Publish")
+    ]
     Coffee = "Coffee"
     Music = "music"
     Travel = "Travel"
@@ -16,8 +26,9 @@ class News(models.Model):
     title = models.CharField(max_length=225)
     body = models.TextField()
     category = models.CharField(max_length=225, choices=STORY_CHOICES, default=Music)
-    status = models.CharField(max_length=225)
-    image_url = models.URLField(max_length=225)
+    status = models.CharField(max_length=225, choices=STATUS_CHOICES, default=Draft)
+    image_url = models.URLField(max_length=225, null=True)
+    auther = models.ForeignKey(User, on_delete=model.CASCADE)
 
 
 

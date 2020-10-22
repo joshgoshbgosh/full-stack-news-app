@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 #local
     'frontend.apps.FrontendConfig',
     'news.apps.NewsConfig',
+    'api.apps.ApiConfig',
 ]
 REST_FRAMEWORK = {
 'DEFAULT_PERMISSION_CLASSES':[
@@ -159,7 +160,7 @@ STATIC_URL = '/static/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'frontend/static/build/static'),)
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/static')
-AUTH_USER_MODEL = 'accounts.User'
+
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

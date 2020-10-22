@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 
-from .models imort News
+from .models import News
 
 
 
