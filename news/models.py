@@ -26,6 +26,7 @@ class News(models.Model):
     status = models.CharField(max_length=225, choices=STATUS_CHOICES, default=Draft)
     image_url = models.URLField(max_length=225, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    isTopStory = models.BooleanField(default = False)
 
     def __str__(self):
         return self.title
