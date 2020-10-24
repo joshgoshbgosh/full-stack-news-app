@@ -18,6 +18,9 @@ import './NewsList.css';
 class Article extends Component {
   render() {
     return (
+// <container>
+//   <row>
+//       <col>
       <Card>
         <Card.Img variant="top" src={this.props.article.image_url} />
         <Card.Body>
@@ -25,6 +28,9 @@ class Article extends Component {
           <Card.Text>{this.props.article.body}</Card.Text>
         </Card.Body>
       </Card>
+  //     </col>
+  //   </row>
+  // </container>
     )
   }
 }
@@ -32,25 +38,27 @@ class Article extends Component {
 
 class NewsList extends Component{
   render() {
-    const articles = this.props.articles.map(article => <Article key={article.id} article={article} />);
-    console.log('articles', articles);
+    const articles = this.props.articles
+      .filter(article => article.isTopStory)
+      .map(article => <Article key={article.id} article={article} />);
+      console.log('articles', articles);
 
-    const trending = selection
-          .filter(articles => !articles.isTopStory && article.status === 'draft')
-          .map(articles =>(
+    const trending = this.props.articles
+          .filter(article => !article.isTopStory)
+          .map(article =>(
+
             <Card className="trend">
-              <Card.Img className="trend-img"variant="top" src={this.props.article.image_url} />
-              <Card.Body className="trend-body">
-                <Card.Title className="trend-title">{this.props.article.title}</Card.Title>
-                <Card.Text className="trend-text">{this.props.article.body}</Card.Text>
+              <Card.Body>
+                <Card.Title className="trendtext">{article.title}</Card.Title>
               </Card.Body>
             </Card>
+
             )
           );
     return(
       <React.Fragment>
       <header>
-      <h1>THE <span class="special-word">RECORD</span> EXCHANGE</h1>
+      <h1>THE <span class="special-word">RECORD</span>EXCHANGE</h1>
 
         <nav>
           <a href="#">HOME</a>
@@ -66,7 +74,15 @@ class NewsList extends Component{
       <p className="pick">TRENDING</p>
       </div>
       </header>
-        {articles}
+        <div className="d-flex">
+          <div className="d-flex flex-column">
+            {articles}
+          </div>
+          <div className="d-flex flex-column">
+            {trending}
+          </div>
+        </div>
+
       </React.Fragment>
     )
   }

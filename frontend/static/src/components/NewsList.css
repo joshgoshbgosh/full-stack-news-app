@@ -150,3 +150,36 @@ h1 {
 .special-word {
   color: red;
 }
+.trend {
+  width: 269px;
+  height: 100px;
+
+  position: relative;
+
+  right: 15px;
+  flex-direction: column;
+  display:flex;
+  /* float: right; */
+
+
+
+
+
+
+}
+.trend:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.trendtext {
+  border-bottom: solid;
+  font-size: 16px;
+  border-bottom-width: thin;
+  border-bottom-color: red;
+  border-top: solid;
+  border-top-width: thin;
+  border-top-color: red;
+  padding-top: 5px;
+  position:relative;
+  bottom: 17px;
+
+}

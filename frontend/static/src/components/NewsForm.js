@@ -32,11 +32,7 @@ handleCategoryChange = (event) => {
   })
 }
 
-handleStatusChange = (event) => {
-  this.setState({
-    status: event.target.value
-  })
-}
+
 
 handleSubmit = (event) => {
   alert(`${this.state.tite} ${this.state.body} ${this.state.category} ${this.state.status}`)
@@ -64,17 +60,9 @@ handleSubmit = (event) => {
                    <option value="Coffee">Coffee</option>
                 </select>
                     </div>
-                  <div>
-                <label>Status</label>
-                <select className="form-control" id="status" name="status" onChange={this.handleInput}>
-              <option>Select Status</option>
-                <option value="Draft">Draft</option>
-                 <option value="Submitted">Submitted</option>
-                 <option value="Published">Published</option>
-               </select>
-               </div>
+
         <button type="submit"className="sub btn btn-outline-dark">Submit</button>
-</form>
+      </form>
 
 
     )
