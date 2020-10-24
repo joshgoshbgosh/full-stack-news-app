@@ -5,7 +5,8 @@ import CoffeeList from './components/CoffeeList';
 import './App.css';
 import NewsForm from './components/NewsForm';
 import NewsList from './components/NewsList';
-import Header from './components/Header';
+import LoginForm from './components/LoginForm';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -50,12 +51,12 @@ class App extends Component {
 
 
 
-
   render() {
     return(
       <div>
         <NewsList articles={this.state.articles}/>
-
+        <NewsForm addArticle={this.addArticle}/>
+        <LoginForm addUser={this.addUser}/>
       </div>
     )
   }

@@ -47,7 +47,7 @@ class NewsList extends Component{
           .filter(article => !article.isTopStory)
           .map(article =>(
 
-            <Card className="trend">
+            <Card key={article.id}className="trend">
               <Card.Body>
                 <Card.Title className="trendtext">{article.title}</Card.Title>
               </Card.Body>
@@ -58,7 +58,7 @@ class NewsList extends Component{
     return(
       <React.Fragment>
       <header>
-      <h1>THE <span class="special-word">RECORD</span>EXCHANGE</h1>
+      <h1>THE <span className="special-word">RECORD</span>EXCHANGE</h1>
 
         <nav>
           <a href="#">HOME</a>

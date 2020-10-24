@@ -79,6 +79,10 @@ header {
 
 
 }
+.log-in:hover {
+  
+
+}
 .top-litter {
   background-color: black;
   height: 30px;
@@ -169,6 +173,7 @@ h1 {
 }
 .trend:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 .trendtext {
   border-bottom: solid;
@@ -181,5 +186,11 @@ h1 {
   padding-top: 5px;
   position:relative;
   bottom: 17px;
+
+}
+
+.trendtext:hover {
+
+
 
 }
