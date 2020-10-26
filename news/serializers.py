@@ -11,3 +11,10 @@ class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
         fields = ('id', 'title', 'body', 'category', 'status', 'image_url', 'author', 'isTopStory',)
+
+
+class AuthorSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = News
+        fields = ('id', 'title', 'body', 'category', 'status,' 'image_url',)

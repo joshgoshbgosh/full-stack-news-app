@@ -1,7 +1,7 @@
 from django.urls import  include, path
 
 
-from .views import NewsListAPIView, NewsDetailAPIView
+from news.views import NewsListAPIView, NewsDetailAPIView
 
 
 

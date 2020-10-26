@@ -1,0 +1,52 @@
+
+.form-the-record {
+  display:inline-block;
+  font-size: 70px;
+  position: relative;
+  left: 330px;
+  top: 75px;
+
+}
+
+.form-exchange {
+
+
+  display:inline-block;
+  position: relative;
+  font-size: 150px;
+  top: 180px;
+  right: 160px;
+
+
+}
+
+.col-12 {
+margin-top: -113px;
+
+
+}
+
+
+
+
+input {
+ width: 400px;
+ border-color: red;
+ color: black;
+
+
+
+}
+label {
+font-family: Symbol;
+
+font-stretch: ultra-expanded;
+letter-spacing: 10px;
+font-size: 20px;
+
+}
+
+
+button {
+
+}

@@ -57,24 +57,7 @@ class NewsList extends Component{
           );
     return(
       <React.Fragment>
-      <header>
-      <h1>THE <span className="special-word">RECORD</span>EXCHANGE</h1>
-
-        <nav>
-          <a href="#">HOME</a>
-          <a href="#">MUSIC</a>
-          <a href="#">COFFEE</a>
-          <a href="#">TRAVEL</a>
-        </nav>
-
-      <button className="log-in">LOG IN</button>
-      <div className="black"></div>
-      <div className="top-litter">
-      <p className="top">TOP STORIES</p>
-      <p className="pick">TRENDING</p>
-      </div>
-      </header>
-        <div className="d-flex">
+      <div className="d-flex">
           <div className="d-flex flex-column">
             {articles}
           </div>

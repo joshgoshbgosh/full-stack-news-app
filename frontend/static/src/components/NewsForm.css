@@ -1,0 +1,35 @@
+.news-form {
+  display:flex;
+  justify-content:space-around;
+}
+.left {
+  flex-direction: column;
+  margin-top: -35px;
+
+}
+.right {
+  flex-direction: column;
+}
+.news-title {
+  font-family: Symbol;
+
+  font-stretch: ultra-expanded;
+  letter-spacing: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.news-text {
+  border-color: red;
+}
+
+.logo-form {
+  font-size: 40px;
+  position: relative;
+  top: 63px;
+  right: 50px;
+}
+.logo2-form {
+  font-size: 80px;
+}
