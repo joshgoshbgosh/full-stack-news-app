@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './LoginForm.css';
 import Cookies from 'js-cookie';
-
+import UserArticles from './UserArticles';
 
 class LoginForm extends Component {
 
@@ -36,6 +36,9 @@ async handleSignIn(event){
 
   const data = await response.json();
   Cookies.set('Authorization', `Token ${data.key}`);
+
+  // this.props.fetchUserArticles();
+
 };
 
 
@@ -51,14 +54,14 @@ render() {
     <container>
       <form className="col-12 col-md-6 mb-5" onSubmit={this.handleSignIn}>
         <div className="form-group">
-          <label className="form-userName">Username</label>
+          <label className="form-userName">LOG IN</label>
           <input type="text" placeholder="Enter Username..." name="username" value={this.state.username} onChange ={this.handleChange} />
         </div>
         <div className="form-group">
-          <label className="form-password1">Password</label>
+          <label className="form-password1"></label>
           <input type="text" placeholder="Enter Password..." name="password" value={this.state.password} onChange ={this.handleChange} />
         </div>
-        <button type="submit"className="sub btn btn-dark">Submit</button>
+        <button type="submit"className="sub btn btn-dark"onClick={()=> this.props.handleSelection('login')}>Submit</button>
       </form>
     </container>
   </React.Fragment>

@@ -4,11 +4,14 @@
 }
 .left {
   flex-direction: column;
-  margin-top: -35px;
+  margin-top: -20px;
+  margin-left: 220px;
 
 }
 .right {
   flex-direction: column;
+  margin-top: 20px;
+  margin-left: 60px;
 }
 .news-title {
   font-family: Symbol;

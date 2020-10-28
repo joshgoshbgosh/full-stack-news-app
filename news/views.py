@@ -23,4 +23,4 @@ class AuthorListAPIView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return Article.objects.filter(author = user)
+        return News.objects.filter(author = user)
