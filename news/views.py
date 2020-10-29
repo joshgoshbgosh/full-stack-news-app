@@ -11,6 +11,11 @@ class NewsListAPIView(generics.ListCreateAPIView):
     serializer_class = NewsSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
+    # override perfrom_create method so logged in user is assinged as the author of new article
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
+
 
 
 class NewsDetailAPIView(generics.RetrieveUpdateDestroyAPIView):

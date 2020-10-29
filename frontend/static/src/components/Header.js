@@ -24,7 +24,7 @@ class Header extends Component {
                   <a href="/submitted">SUBMITTED</a>
                   <a href="/published">PUBLISHED</a>
                   <button className="write" onClick={()=> this.props.handleSelection('post')}>Write Article</button>
-                  <button className="log-out" onClick={()=> this.props.handleLogOut('logout')}>Log Out</button>
+                  <button className="log-out" onClick={this.props.handleLogOut}>Log Out</button>
                 </React.Fragment>
               ) :
               (

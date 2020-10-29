@@ -4,7 +4,7 @@
 }
 .left {
   flex-direction: column;
-  margin-top: -20px;
+  margin-top: 30px;
   margin-left: 220px;
 
 }
@@ -25,7 +25,11 @@
 
 .news-text {
   border-color: red;
+
 }
+.news-text:focus {outline:0;}
+
+select:focus {outline:0;}
 
 .logo-form {
   font-size: 40px;

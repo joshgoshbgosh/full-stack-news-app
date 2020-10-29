@@ -7,19 +7,23 @@ class News(models.Model):
     Draft = "Draft"
     Submit = "Submit"
     Publish = "Publish"
+
     STATUS_CHOICES = [
-    (Draft, "Draft"),
-    (Submit, "Submit"),
-    (Publish, "Publish")
+        (Draft, "Draft"),
+        (Submit, "Submit"),
+        (Publish, "Publish")
     ]
+
     Coffee = "Coffee"
     Music = "music"
     Travel = "Travel"
+
     STORY_CHOICES =[
         (Coffee, "Coffee"),
         (Music, "Music"),
         (Travel, "Travel")
     ]
+
     title = models.CharField(max_length=225)
     body = models.TextField()
     category = models.CharField(max_length=225, choices=STORY_CHOICES, default=Music)

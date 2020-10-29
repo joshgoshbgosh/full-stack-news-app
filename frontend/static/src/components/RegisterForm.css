@@ -25,6 +25,7 @@ margin-top: -113px;
 
 
 }
+.col-12:focus {outline:0;}
 
 
 
@@ -37,16 +38,12 @@ input {
 
 
 }
+input:focus {outline:0;}
 label {
 font-family: Symbol;
 
 font-stretch: ultra-expanded;
 letter-spacing: 10px;
 font-size: 20px;
-
-}
-
-
-button {
 
 }

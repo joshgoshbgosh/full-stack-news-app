@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './LoginForm.css';
 import Cookies from 'js-cookie';
-import UserArticles from './UserArticles';
+// import UserArticles from './UserArticles';
 
 class LoginForm extends Component {
 
@@ -16,11 +16,13 @@ class LoginForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
 
+
   }
 
   handleChange (event){
     this.setState({[event.target.name]: event.target.value});
 }
+
 async handleSignIn(event){
 
   event.preventDefault();
@@ -35,10 +37,11 @@ async handleSignIn(event){
   });
 
   const data = await response.json();
-  Cookies.set('Authorization', `Token ${data.key}`);
-
-  // this.props.fetchUserArticles();
-
+  if(data.key) {
+    console.log('firing');
+    Cookies.set('Authorization', `Token ${data.key}`);
+    this.props.handleSelection('myarticles');
+  }
 };
 
 

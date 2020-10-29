@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Article from './NewsList';
+// import Article from './NewsList';
 import Card from 'react-bootstrap/Card';
 
 
@@ -24,7 +24,7 @@ class UserArticles extends Component {
 
   render(){
     const articles = this.state.articles.map(article =>
-      <Card>
+      <Card key={article.id}>
         <Card.Img variant="top" src={article.image_url} />
         <Card.Body>
           <Card.Title>{article.title}</Card.Title>

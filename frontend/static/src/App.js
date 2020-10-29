@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import TravelList from './components/TravelList';
-import MusicList from './components/MusicList';
-import CoffeeList from './components/CoffeeList';
+// import TravelList from './components/TravelList';
+// import MusicList from './components/MusicList';
+// import CoffeeList from './components/CoffeeList';
 import './App.css';
 import NewsForm from './components/NewsForm';
 import NewsList from './components/NewsList';
@@ -24,6 +24,7 @@ class App extends Component {
       articles: [],
       title: [],
       page: 'articles',
+      // loggedIn: Cookies.get('Authorization') ? true : false,
       // image_url:
     }
 
@@ -33,13 +34,16 @@ class App extends Component {
     this.fetchUserArticles = this.fetchUserArticles.bind(this);
     this.fetchArticles = this.fetchArticles.bind(this);
     this.handleLogOut = this.handleLogOut.bind(this);
+
   }
 
   handleSelection(selection) {
-    if (selection === 'myArticle'){
+    if (selection === 'myarticles'){
       this.fetchUserArticles();
+    } else {
+        this.setState({page: selection});
     }
-    this.setState({page: selection});
+
   }
 
 
@@ -54,22 +58,24 @@ class App extends Component {
   fetchArticles() {
     fetch('api/v1/articles/')
       .then(response => response.json())
-      .then(data => this.setState({articles: data}))
+      .then(data => this.setState({articles: data, page: 'articles'}))
       .catch(error => console.log('Error:', error));
+
+    console.log('firing');
   }
 
   fetchUserArticles() {
     fetch('/api/v1/articles/user/')
     .then(response => response.json())
-    .then(data => this.setState({articles: data}))
+    .then(data => this.setState({articles: data, page: 'myarticles'}))
     .catch(error => console.log('Error:', error));
   }
 
   async handleLogOut(event){
-    // event.preventDefault();
+    event.preventDefault();
     const csrftoken = Cookies.get('csrftoken');
     const response = await fetch('/api/v1/rest-auth/logout/', {
-       method: 'post',
+       method: 'POST',
        headers: {
          'Content-Type':'application/json',
           'X-CSRFToken': csrftoken,
@@ -78,12 +84,13 @@ class App extends Component {
     });
 
     const data = await response.json();
-    console.log(data);
-    Cookies.remove('Authorization');
-
-    this.fetchArticles();
-
+    if(data.detail) {
+      console.log('firing');
+      Cookies.remove('Authorization');
+      this.fetchArticles();
+    }
   };
+
 
 
   // <NewsList articles={this.state.articles}/>
@@ -96,9 +103,9 @@ class App extends Component {
 
     let html;
     if (this.state.page === 'login') {
-      html = <LoginForm signIn={this.signIn} handleSelection={this.handleSelection}/>;
+      html = <LoginForm fetchUserArticles={this.fetchUserArticles} handleSelection={this.handleSelection}/>;
     } else if(this.state.page === 'register'){
-        html = <RegisterForm addUser={this.addUser}/>;
+        html = <RegisterForm addUser={this.addUser} handleSelection={this.handleSelection}/>;
     } else if(this.state.page === 'articles'){
        html = <NewsList articles={this.state.articles}/>
     } else if(this.state.page === 'post') {

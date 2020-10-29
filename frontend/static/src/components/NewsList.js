@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import Card from 'react-bootstrap/Card';
 import './NewsList.css';
 
@@ -38,10 +38,12 @@ class Article extends Component {
 
 class NewsList extends Component{
   render() {
+    // console.log(this.props.articles)
+
     const articles = this.props.articles
       .filter(article => article.isTopStory)
       .map(article => <Article key={article.id} article={article} />);
-      console.log('articles', articles);
+      // console.log('articles', articles);
 
     const trending = this.props.articles
           .filter(article => !article.isTopStory)

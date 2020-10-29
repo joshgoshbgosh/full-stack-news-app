@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Footer.css';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 
 
 class Footer extends Component {

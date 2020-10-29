@@ -39,7 +39,11 @@ class RegisterForm extends Component {
     });
 
     const data = await response.json();
-    Cookies.set('Authorization', `Token ${data.key}`);
+
+    if(data.key) {
+      Cookies.set('Authorization', `Token ${data.key}`);
+      this.props.handleSelection('myarticles');
+    }
 };
 
       render() {
