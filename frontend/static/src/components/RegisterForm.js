@@ -71,14 +71,14 @@ class RegisterForm extends Component {
                               </div>
                               <div className="form-group">
                                 <label className="form-password2"></label>
-                                  <input type="text" placeholder="Re-enter Password..." name="password2" defaultValue={this.state.title} onChange ={this.handleChange} />
+                                  <input type="text" placeholder="Re-enter Password..." name="password2" />
                                     </div>
                                     <button type="submit"className="sub btn btn-dark">Submit</button>
                                   </form>
                                   </container>
                                 </React.Fragment>
 
-                                    )
-                                  }
+                                )
+                              }
                                 }
 export default RegisterForm;
